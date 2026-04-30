@@ -30,7 +30,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+        ]);
+        Category::create($request->all());
+        return redirect()->route('categories.index')->with('success','Категория добавлена');
     }
 
     /**
@@ -46,7 +50,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        dd(__METHOD__);
+        return view('admin.categories.create');
     }
 
     /**

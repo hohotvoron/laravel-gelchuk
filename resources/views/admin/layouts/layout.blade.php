@@ -222,11 +222,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('categories.create') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Новая категория</p>
-                </a>
-              </li>
+                  <a href="{{ route('categories.create') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Новая категория</p>
+                  </a>
+              </li> 
             </ul>
           </li>
           
@@ -236,7 +236,8 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-
+  @include('admin.layouts.errVal')
+  @yield('errors')
   <!-- Content Wrapper. Contains page content -->
   @yield('content')
   <!-- /.content-wrapper -->
