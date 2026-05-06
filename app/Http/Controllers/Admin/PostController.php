@@ -34,7 +34,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+        ]);
+        dd($request->all());
+        return redirect()->route('posts.index')->with('success', 'Статья добавлена');
     }
 
     /**
@@ -50,7 +54,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.posts.edit');
     }
 
     /**
@@ -58,7 +62,10 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+        ]);
+        return redirect()->route('posts.index')->with('success', 'Изменения сохранены');
     }
 
     /**
@@ -66,6 +73,7 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Category::destroy($id);
+        return redirect()->route('posts.index')->with('success', 'Сатья удалена');
     }
 }

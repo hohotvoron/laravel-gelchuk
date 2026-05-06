@@ -48,6 +48,7 @@
                                     <small class="form-text text-muted">Введите название категории (обязательное поле)</small>
                                 @enderror
                             </div>
+                            
                         </div>
                         <!-- /.card-body -->
                         

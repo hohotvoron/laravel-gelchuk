@@ -15,7 +15,38 @@
 
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
-
+<link rel="stylesheet" href="">
+<link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<style>
+    /* Исправляем цвета для выбранных тегов */
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+    
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        color: #fff;
+        margin-right: 5px;
+    }
+    
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+        color: #ff0000;
+        background: none;
+    }
+    
+    /* Текст внутри выпадающего списка */
+    .select2-container--default .select2-results__option {
+        color: #333;
+    }
+    
+    /* Выбранный пункт в выпадающем списке */
+    .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+        background-color: #007bff;
+        color: #fff;
+    }
+</style>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -330,11 +361,22 @@
 <!-- Bootstrap 4 -->
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+<script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
+<script>
+  $(function(){
+    $('.select2').select2()
+    $('.select2bs4').select2({
+      theme:'bootstrap4',
+      
+    })
+  })
+</script>
+
 
 </body>
 </html>
