@@ -67,6 +67,15 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="card-footer clearfix">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="dataTables_paginate paging_simple_numbers float-right">
+                {{ $categories->links('pagination::bootstrap-4') }}
+            </div>
+        </div>
+    </div>
+</div>
     </div>
     @else
     <p>Категорий пока нет...</p>
@@ -74,9 +83,7 @@
 </div>
 <!-- /.card-body -->
 
-                            <div class="card-footer clearfix">
-                                <!-- /.card-footer -->
-                            </div>
+                            
                             <!-- /.card-footer -->
                         </div>
                     </div>
