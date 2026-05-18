@@ -64,6 +64,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('logout') }}" class="nav-link">Logout</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -209,7 +212,7 @@
 
         </div>
         <div class="info">
-          <a href="#" class="d-block">Семенчик Гельчук</a>
+          <a href="#" class="d-block">{{ Auth()->user()->name }}</a>
         </div>
       </div>
 
