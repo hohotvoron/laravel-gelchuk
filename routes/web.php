@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
+use App\Http\Controllers\PostController as KalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,8 @@ Route::group(['middleware'=>'guest'], function(){
 Route::get('/login', [UserController::class, 'loginForm'])->name('login.create');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+Route::get('/article', [KalController::class, 'index']);
 
 Route::get('/', function(){
     return view('welcome');
