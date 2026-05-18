@@ -115,7 +115,7 @@
                         <div class="blog-box wow fadeIn">
                             <div class="post-media">
                                 <a href="{{ route('posts.single', ['slug'=>$post->slug]) }}" title="">
-                                    <img src="{{ $post->getImage() }}" alt="" style="width: 250px; height: 150px;
+                                    <img src="{{ $post->getImage() }}" alt="" style="width: 150px; height: 150px;
                                     margin-right: 20px;">
                                     <div class="hovereffect">
                                         <span></span>

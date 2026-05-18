@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Http\Controllers\PostController as KalController;
 use App\Http\Controllers\CategoryController as MochaController;
+use App\Http\Controllers\TagController as RvotaController;
 
 
 /*
@@ -45,6 +46,8 @@ Route::get('logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/', [KalController::class, 'index'])->name('home');
 Route::get('/article/{slug}', [KalController::class, 'show'])->name('posts.single');
 Route::get('/category/{slug}', [MochaController::class, 'show'])->name('categories.single');
+Route::get('/tag/{slug}', [RvotaController::class, 'show'])->name('tags.single');
+
 
 // Route::get('/', function(){
 //     return view('welcome');
