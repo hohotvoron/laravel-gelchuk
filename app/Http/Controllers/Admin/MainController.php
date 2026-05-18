@@ -17,7 +17,6 @@ class MainController extends Controller
         // $f = new Category();
         // $f->title='жопы деньги два хуя';
         // $f->save();
-        Post::toArray();
         return view('admin.index');
     }
 }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,9 +86,16 @@
                 </nav>
             </div><!-- end container-fluid -->
         </header><!-- end market-header -->
+        
+        
+        
 
-        <section id="cta" class="section">
-            <div class="container">
+        <section id="cta" class="section" style="display: flex;">
+                        @include('user.layouts.sidebar')
+                            @yield('sidebar')
+            <div class="container" style="display: block;">
+                
+
                 <div class="row">
                     <div class="col-lg-8 col-md-12 align-self-center">
                         <h2>A digital marketing blog</h2>
