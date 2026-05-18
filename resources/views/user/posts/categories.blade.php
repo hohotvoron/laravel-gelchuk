@@ -64,10 +64,12 @@
                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                             </li>
                         </ul>
-
+                        @include('user.layouts.search')
+                        @yield('search')
                     </div>
                 </nav>
             </div><!-- end container-fluid -->
+            
         </header><!-- end market-header -->
 
         <div class="page-title db">

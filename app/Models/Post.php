@@ -36,7 +36,7 @@ class Post extends Model
 
     public function getImage(){
         if(!$this->thumbnail){
-            return asset("no-image.png");
+            return asset("uploads/images/2026-05-18/zaglushka.jpg");
         }
         return asset("uploads/{$this->thumbnail}");
     }

@@ -78,10 +78,8 @@
                                 <a class="nav-link" href="marketing-contact.html">Contact Us</a>
                             </li>
                         </ul>
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="text" placeholder="How may I help?">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
+                        @include('user.layouts.search')
+                        @yield('search')
                     </div>
                 </nav>
             </div><!-- end container-fluid -->
@@ -134,7 +132,7 @@
                         <div class="blog-meta big-meta text-center">
                             <div class="post-sharing">
                                 <h4><a href="{{ route('posts.single', ['slug'=>$post->slug]) }}"
-                                title="{{ $post->title }}"></a></h4>
+                                title="{{ $post->title }}">{{ $post->title }}</a></h4>
                                 <h3>{{  $post->description }}</h3>
                                 <small><a href="{{ route('categories.single',['slug'=>$post->category->id]) }}"
                                 title="">{{ $post->category->title }}</a></small>

@@ -67,6 +67,8 @@
                                 <a class="nav-link" href="{{ route('categories.single', ['slug'=>$post->category->slug]) }}">Категории</a>
                             </li>
                         </ul>
+                        @include('user.layouts.search')
+                        @yield('search')
                     </div>
                 </nav>
             </div><!-- end container-fluid -->
