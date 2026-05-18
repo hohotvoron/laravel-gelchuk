@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Http\Controllers\PostController as KalController;
+use App\Http\Controllers\CategoryController as MochaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,7 @@ use App\Http\Controllers\PostController as KalController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
     Route::get('/', [MainController::class, 'index'])->name('admin.index');
@@ -42,9 +42,11 @@ Route::get('/login', [UserController::class, 'loginForm'])->name('login.create')
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
-Route::get('/article', [KalController::class, 'index']);
+Route::get('/', [KalController::class, 'index'])->name('home');
+Route::get('/article/{slug}', [KalController::class, 'show'])->name('posts.single');
+Route::get('/category/{slug}', [MochaController::class, 'show'])->name('categories.single');
 
-Route::get('/', function(){
-    return view('welcome');
-})->name('home');
+// Route::get('/', function(){
+//     return view('welcome');
+// })->name('home');
 

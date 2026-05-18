@@ -111,39 +111,7 @@
         <section class="section lb">
             <div class="container">
                 <div class="row" style="padding-top: 30px;">
-                    @foreach ($posts as $post)
-                        <div class="blog-box wow fadeIn">
-                            <div class="post-media">
-                                <a href="{{ route('posts.single', ['slug'=>$post->slug]) }}" title="">
-                                    <img src="{{ $post->getImage() }}" alt="" style="width: 250px; height: 150px;
-                                    margin-right: 20px;">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="blog-meta big-meta text-center">
-                            <div class="post-sharing">
-                                <h4><a href="{{ route('posts.single', ['slug'=>$post->slug]) }}"
-                                title="{{ $post->title }}"></a></h4>
-                                <h3>{{  $post->description }}</h3>
-                                <small><a href="{{ route('categories.single',['slug'=>$post->category->id]) }}"
-                                title="">{{ $post->category->title }}</a></small>
-                                <small>{{ $post->getPostDate() }}</small>
-                                <small><i class="fa fa-eye"></i>{{ $post->views }}</small>
-                            </div>
-                        </div>
-
-                        <hr class="invis">
-                    @endforeach
-                </div><!-- end row -->
-                <div class="row">
-                    <div class="col-sm-12 col-md-7">
-                        <div class="dataTables_paginate paging_simple_numbers float-right">
-                            {{ $posts->links('pagination::bootstrap-4') }}
-                        </div>
-                    </div>
+                    
                 </div>
             </div><!-- end container -->
         </section>
